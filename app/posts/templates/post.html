@@ -1,0 +1,28 @@
+<section class="col-md-8">
+
+  <!-- Begin Post -->
+  <article>
+    <header>
+      <h1 class="page-header">{{post.title}}</h1>
+
+      <p>
+        <small class="glyphicon glyphicon-user"></small>
+        by <a href="#/posts?author={{utils.cleanTitleLower(post.author)}}">{{post.author}}</a>
+      </p>
+      <p>
+        <small class="glyphicon glyphicon-time"></small>
+        Posted on {{post.date | date : "d MMM, yyyy"}}
+      </p>
+      <p>
+        <b>Tags:&nbsp;</b>
+        <span ng-repeat="tag in post.tags">
+          <a href="#/posts?category={{utils.cleanTitleLower(tag)}}" class="label label-default">{{tag}}</a>
+        </span>
+      </p>
+    </header>
+    <hr>
+    <!-- End of Post -->
+    <div ng-bind-html="postHtml"></div>
+    <!-- Post Content -->
+  </article>
+<section>

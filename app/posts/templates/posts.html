@@ -1,0 +1,51 @@
+<section class="col-md-8">
+  <h2 class="page-header" ng-hide="searchQuery">Showing {{posts.length}} posts</h2>
+  <h2 class="page-header" ng-show="searchQuery">{{posts.length}} posts matching: {{searchQuery}}</h2>
+
+  <!-- Begin Post -->
+  <article ng-repeat="post in posts | limitPosts: limit: pageNum">
+    <header>
+      <h2>
+        <a href="#/post/{{utils.cleanTitle(post.title)}}">{{post.title}}</a>
+      </h2>
+
+      <p>
+        <small class="glyphicon glyphicon-user"></small>
+        by <a href="#/posts?author={{utils.cleanTitleLower(post.author)}}">{{post.author}}</a>
+      </p>
+      <p>
+        <small class="glyphicon glyphicon-time"></small>
+        Posted on {{post.date | date : "d MMM, yyyy"}}
+      </p>
+    </header>
+
+    <!-- Post Description -->
+    <p>{{post.description}}</p>
+    <br>
+
+    <footer class="clearfix">
+      <p class="pull-left">
+        <b>Tags:&nbsp;</b>
+        <span ng-repeat="tag in post.tags">
+          <a href="#/posts?category={{utils.cleanTitleLower(tag)}}" class="label label-default">{{tag}}</a>
+        </span>
+      </p>
+
+      <a class="btn btn-primary pull-right" href="#/post/{{utils.cleanTitle(post.title)}}">
+        Read More <i class="glyphicon glyphicon-chevron-right"></i>
+      </a>
+    </footer>
+    <hr>
+  </article>
+  <!-- End of Post -->
+
+  <!-- Pager -->
+  <ul class="pager">
+    <li class="previous" ng-hide="(pageNum * limit) >= posts.length">
+      <a href="#/posts/{{pageNum + 1}}{{queryParams}}">&larr; Older</a>
+    </li>
+    <li class="next" ng-hide="pageNum === 1">
+      <a href="#/posts/{{pageNum - 1}}{{queryParams}}">Newer &rarr;</a>
+    </li>
+  </ul>
+</section>

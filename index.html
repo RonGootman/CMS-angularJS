@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="blogApp">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Real-Time Blog App</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+	<link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<!-- Navigation -->
+	<ng-include src="'app/layout/templates/nav.html'"></ng-include>
+
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<div class="row">
+
+			<!-- Dynamic Content Here -->
+			<ng-view></ng-view>
+
+			<!-- Blog Sidebar Widgets Column -->
+			<ng-include src="'app/layout/templates/sidebar.html'"></ng-include>
+
+		</div>
+		<!-- /.row -->
+
+		<hr>
+
+		<!-- Footer -->
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Copyright &copy; Netcraft Academy 2015</p>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+		</footer>
+
+	</div>
+	<!-- /.container -->
+
+	<!-- Libraries -->
+	<script src="lib/js/jquery.min.js"></script>
+	<script src="lib/js/bootstrap.min.js"></script>
+	<script src="//code.angularjs.org/1.3.9/angular.min.js"></script>
+	<script src="//code.angularjs.org/1.3.9/angular-route.min.js"></script>
+	<script src="//code.angularjs.org/1.3.9/angular-sanitize.min.js"></script>
+	<script src="lib/js/marked.min.js"></script>
+
+	<!-- App -->
+	<script src="app/app.js"></script>
+
+	<!-- Layout -->
+	<script src="app/layout/controllers/navCtrl.js"></script>
+	<script src="app/layout/controllers/SidebarCtrl.js"></script>
+
+	<!-- Common -->
+	<script src="app/common/app-states.service.js"></script>
+	<script src="app/common/data.service.js"></script>
+	<script src="app/common/utils.js"></script>
+	<script src="app/common/sidebarFilters.js"></script>	
+
+	<!-- Posts Tab -->
+	<script src="app/posts/controllers/postsCtrl.js"></script>
+	<script src="app/posts/filters/limitPosts.js"></script>
+	<script src="app/posts/controllers/postCtrl.js"></script>
+
+
+	<!-- Admin -->
+	<script src="app/admin/controllers/adminCtrl.js"></script>
+
+</body>
+</html>
