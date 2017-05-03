@@ -19,8 +19,8 @@ The gist of the project is add functionality to the site through angular.
 
 
 ## Current state of work
-- Entirely completed the Posts section of the project by following this guide.
-- Moving on to the Admin section area (right now it is just Static). 
+- Nearly completed the Posts section of the project by [following this guide](https://rongootman.github.io/CMS-angularJS/README.html).
+- Working on configuring the functionality of the sidebar-filters before moving on to the Admin portion of the project.
 
 
 
