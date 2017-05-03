@@ -15,12 +15,13 @@ The app involves two major sections:
 
 
 All of the html and css (Bootstrap) structure has been already taken care of.
+
 The gist of the project is add functionality to the site through angular.
 
 
 ## Current state of work
-- Entirely completed the Posts section of the project by following this guide.
-- Moving on to the Admin section area (right now it is just Static). 
+- Nearly completed the Posts section of the project by [following this guide](https://rongootman.github.io/CMS-angularJS/README.html).
+- Still have to complete the sidebar-filters functionaly before moving on the the Admin portion of the project (right now it is just Static).  
 
 
 
